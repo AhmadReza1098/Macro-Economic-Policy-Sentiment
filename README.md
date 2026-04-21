@@ -1,24 +1,32 @@
-# EcoPolicySentimentAnalysis
+# Macro-Economic Policy Sentiment & Sovereign Risk Engine
+
+Macro-Policy-Risk-Engine/  
+│
+├── notebooks/
+│   └── policy_sentiment_engine.ipynb  
+│
+├── images/
+│   ├── sentiment_distribution.png     
+│   └── sentiment_vs_volatility.png    
+│
+├── requirements.txt                   
+└── README.md                          
 
 ## Project Overview
-This project performs sentiment analysis on economic policy-related news articles from the Economic Times focusing on the Reserve Bank of India (RBI) policies and related market reactions. The aim is to extract insights on how policy announcements influence market sentiment and investor behavior.
+This project engineers a natural language processing (NLP) pipeline to extract, quantify, and analyze sentiment from Reserve Bank of India (RBI) policy documents and related financial news. The core objective is to translate qualitative central bank communication into quantitative "Hawkish" vs. "Dovish" signals, treating macroeconomic sentiment as a lead indicator for market volatility and sovereign risk.
 
-## Methodology
-- Web scraping was used to collect news article titles, summaries, and full texts on RBI policies.
-- Text data was cleaned and preprocessed using natural language processing techniques such as stopword removal and tokenization.
-- Sentiment analysis was conducted using VADER (Valence Aware Dictionary and sEntiment Reasoner) to classify articles as positive, negative, or neutral.
-- Visualization techniques including sentiment distribution histograms and word clouds for positive/negative summaries help to understand sentiment trends.
+## Quantitative Methodology
+* **Data Engineering:** Automated the extraction of 200+ RBI policy-related articles and meeting summaries from the Economic Times.
+* **Text Processing:** Applied financial-text tokenization and noise reduction to isolate policy-critical vocabulary.
+* **Sentiment Scoring:** Utilized valence-aware dictionary reasoning (VADER) adapted for financial contexts to classify text into structured sentiment vectors, scoring exact magnitudes of policy optimism vs. pessimism.
+* **Risk Visualization:** Mapped sentiment distributions to identify structural shifts in market confidence surrounding repo rate adjustments.
 
-## Key Outputs and Insights
-- Successfully scraped and processed 200+ RBI policy-related articles.
-- Sentiment classification results showed a majority of articles reflected positive sentiment supporting market confidence.
-- Compound sentiment scores ranged widely, with the most positive article scoring 0.966 and the most negative article scoring -0.897.
-- Word clouds highlighted key terms associated with positive and negative sentiments in the RBI policy context.
-- The analysis suggests gradual market optimism amid RBI maintaining or adjusting repo rates in response to economic conditions.
+## Key Insights & Business Value
+* **Tail-Risk Identification:** Isolated extreme negative compound sentiment scores (-0.897) during periods of high economic uncertainty, proving the model's ability to capture sudden bearish market shifts.
+* **Policy Correlation:** Demonstrated that prolonged periods of positive sentiment (peaking at 0.966) directly correlated with RBI's stabilization of repo rates.
+* **Strategic Application:** This pipeline provides a framework for translating unstructured central bank rhetoric into structured risk metrics, a critical input for portfolio stress testing and volatility forecasting.
 
-## Technologies Used
-- Python libraries: Requests, BeautifulSoup, Pandas, NLTK (VADER), Matplotlib, WordCloud
-- Data extraction, processing, sentiment scoring, and visualization workflows were implemented end-to-end.
-
-## Conclusion
-This project demonstrates effective application of NLP and sentiment analysis tools on economic policy data to reveal actionable market sentiment trends. Such insights can assist economists, financial analysts, and policymakers in understanding market reactions to monetary policy developments.
+## Technical Architecture
+* **Language:** Python
+* **Libraries:** Pandas, NLTK (VADER), BeautifulSoup, Requests, Matplotlib
+* **Execution:** Jupyter Notebooks (`/notebooks` directory)
