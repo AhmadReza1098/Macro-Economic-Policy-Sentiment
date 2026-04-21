@@ -105,9 +105,17 @@ Financial text is notoriously difficult to process because standard NLP models o
 
 Before correlating sentiment with risk, I analyzed the structural distribution of the text data:
 
+![Sentiment Distribution](images/sentiment_distribution.png)
+
 - **The "Bureaucratic Neutrality" Factor:** The histogram of sentiment scores revealed a heavy concentration near 0.0 (Neutral). This is expected, as central banks use highly measured, diplomatic language.
 - **Identifying the Extremes:** Because most text is neutral, the outliers became the most valuable data points. Identifying a compound score of -0.897 or +0.966 acted as a massive anomaly detection flag.
 - **Topic Modeling:** Extracted core themes using WordClouds, verifying that high-volatility periods were dominated by terms like "inflation," "repo," and "shock."
+
+**Hawkish / Risk Signals (Negative Sentiment):**
+![Negative Sentiment Word Cloud](images/negative_wordcloud.png)
+
+**Dovish / Stabilizing Signals (Positive Sentiment):**
+![Positive Sentiment Word Cloud](images/positive_wordcloud.png)
 
 ---
 
