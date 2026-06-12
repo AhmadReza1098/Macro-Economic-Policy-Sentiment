@@ -109,7 +109,7 @@ Financial text is notoriously challenging for standard text-mining packages. For
 
 Before running the economic system models, the structural properties of the transformer-generated data were mapped:
 
-![Sentiment Distribution](images/sentiment_distribution.png)
+![Sentiment Distribution](images/sentiment_scatter.png)
 
 - **The Distribution of Bureaucracy:** Plotting the distribution of FinBERT scores revealed distinct pattern tracking for monetary policy. While generic news heavily gathers around exact neutral flags, specific central bank policy reviews show clear clustering trends during key economic windows (e.g., inflation policy tightening cycles).
 - **Signal Extraction:** Isolated tail anomalies (extreme hawkish/dovish sentiment spikes) to serve as warning thresholds for the market variables.
